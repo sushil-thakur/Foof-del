@@ -105,3 +105,126 @@
     }
   
 }
+
+/* Profile dropdown styles */
+.navbar-profile {
+    position: relative;
+    display: inline-block;
+}
+
+.navbar-profile img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #49557e;
+    transition: all 0.3s ease;
+}
+
+.navbar-profile img:hover {
+    border-color: tomato;
+    transform: scale(1.05);
+}
+
+.nav-profile-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 15px 0;
+    list-style: none;
+    margin: 0;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    border: 1px solid #e8e8e8;
+}
+
+.navbar-profile:hover .nav-profile-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-profile-dropdown li {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #333;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.nav-profile-dropdown li:hover {
+    background-color: #f8f9fa;
+    color: tomato;
+}
+
+.nav-profile-dropdown li img {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    border: none;
+    border-radius: 0;
+}
+
+.nav-profile-dropdown li img:hover {
+    transform: none;
+    border: none;
+}
+
+.nav-profile-dropdown li p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.nav-profile-dropdown hr {
+    margin: 8px 0;
+    border: none;
+    height: 1px;
+    background-color: #e8e8e8;
+}
+
+/* Enhanced sign in button */
+.navbar button {
+    font-size: 16px;
+    background: linear-gradient(135deg, transparent, transparent);
+    color: #49557e;
+    border: 2px solid tomato;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar button:hover {
+    background: linear-gradient(135deg, tomato, #ff6b4a);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 99, 71, 0.3);
+}
+
+.navbar button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.navbar button:hover::before {
+    left: 100%;
+}

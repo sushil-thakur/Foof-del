@@ -1,0 +1,119 @@
+.list {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.list p {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.list-table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.list-table-format {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1fr 1fr 0.5fr;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.list-table-format:hover:not(.title) {
+    background-color: #f8f9fa;
+}
+
+.list-table-format.title {
+    background-color: #4a90e2;
+    color: white;
+    font-weight: 600;
+    border-bottom: none;
+}
+
+.list-table-format.title b {
+    font-size: 16px;
+}
+
+.list-table-format img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #e8e8e8;
+}
+
+.list-table-format p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.cursor {
+    cursor: pointer;
+    background-color: #ff4757;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 16px !important;
+}
+
+.cursor:hover {
+    background-color: #ff3742;
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .list-table-format {
+        grid-template-columns: 1fr 1.5fr 1fr 1fr 0.5fr;
+        gap: 10px;
+        padding: 12px 15px;
+        font-size: 12px;
+    }
+    
+    .list-table-format img {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .cursor {
+        width: 25px;
+        height: 25px;
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .list-table-format {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 8px;
+        padding: 10px;
+        font-size: 11px;
+    }
+    
+    .list-table-format img {
+        width: 40px;
+        height: 40px;
+    }
+}
