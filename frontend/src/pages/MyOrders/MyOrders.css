@@ -1,0 +1,215 @@
+.my-orders {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.my-orders h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.my-orders h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(135deg, tomato, #ff6b4a);
+  border-radius: 2px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.my-orders-order {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  transition: all 0.3s ease;
+  border: 1px solid #e8e8e8;
+  position: relative;
+  overflow: hidden;
+}
+
+.my-orders-order::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(135deg, tomato, #ff6b4a);
+}
+
+.my-orders-order:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.my-orders-order img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 2px 4px rgba(255, 99, 71, 0.3));
+}
+
+.my-orders-order p {
+  margin: 12px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.my-orders-order p:first-of-type {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid tomato;
+}
+
+.my-orders-order p:nth-of-type(2) {
+  font-size: 18px;
+  font-weight: 700;
+  color: tomato;
+}
+
+.my-orders-order p:nth-of-type(3) {
+  font-weight: 600;
+  color: #555;
+}
+
+.my-orders-order p:nth-of-type(4) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.my-orders-order p:nth-of-type(4) span {
+  color: #28a745;
+  font-size: 12px;
+}
+
+.my-orders-order p:nth-of-type(4) b {
+  color: #28a745;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.my-orders-order button {
+  background: linear-gradient(135deg, tomato, #ff6b4a);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 3px 10px rgba(255, 99, 71, 0.3);
+}
+
+.my-orders-order button:hover {
+  background: linear-gradient(135deg, #ff6b4a, #ff5722);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(255, 99, 71, 0.4);
+}
+
+.my-orders-order button:active {
+  transform: translateY(0);
+}
+
+/* Empty state */
+.no-orders {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.no-orders img {
+  width: 120px;
+  height: 120px;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.no-orders h3 {
+  font-size: 24px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.no-orders p {
+  font-size: 16px;
+  color: #777;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .my-orders {
+    padding: 15px;
+    margin: 10px;
+  }
+  
+  .my-orders h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+  
+  .my-orders-order {
+    padding: 20px 15px;
+  }
+  
+  .my-orders-order p:first-of-type {
+    font-size: 14px;
+  }
+  
+  .my-orders-order p:nth-of-type(2) {
+    font-size: 16px;
+  }
+  
+  .my-orders-order button {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-orders {
+    padding: 10px;
+  }
+  
+  .my-orders-order {
+    padding: 15px 10px;
+  }
+  
+  .my-orders-order img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .container {
+    gap: 15px;
+  }
+}

@@ -32,15 +32,25 @@ const StoreContextProvider = (props) => {
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
         let itemInfo = food_list.find((product) => product._id === item);
-        totalAmount += itemInfo.price * cartItems[item];
+        if (itemInfo) {
+          totalAmount += itemInfo.price * cartItems[item];
+        }
       }
     }
     return totalAmount;
   };
   const fetchFoodList = async()=>{
-    const response = await axios.get(url+"/api/food/list");
-    if (response.data.sucess) {
-      setFoodlist(response.data.data)
+    try {
+      const response = await axios.get(url+"/api/food/list");
+      console.log("Food list response:", response.data);
+      if (response.data.success) {
+        setFoodlist(response.data.data)
+        console.log("Food list set:", response.data.data);
+      } else {
+        console.log("Failed to fetch food list:", response.data);
+      }
+    } catch (error) {
+      console.error("Error fetching food list:", error);
     }
   }
 
